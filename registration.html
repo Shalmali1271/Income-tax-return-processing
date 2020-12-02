@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="./stylesheet.css"/>
+</head>
+<body>
+    <div class="nav">
+        <nav>
+        <img class="logo-img" src="homepage_images/Logo1.svg" width="200" height="150">
+            <ul>
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Feedback</a></li>
+                <li><a href="#">Contact us</a></li>
+            </ul>
+        </nav>  
+    </div>
+    <h1 class="heading1">Welcome to Income Tax Return Processing</h1>
+    <h2 class="heading">Fill Form 16(A)</h2>
+    <div class="form-box">
+        <form action="registration.php" method="post" class="login">
+            <label for="userid"><b>User ID : </b></label>
+            <input type="text" class="input-field" id="psd" name="userid" required><br><br>
+
+            <label for="name"><b>Name : </b></label>
+            <input type="text" class="input-field" id="psd" name="name" required><br><br>
+
+            <label for="pannumber"><b>PAN Number : </b></label>
+            <input type="pannumber" class="input-field" id="psd" name="pannumber" required><br><br>
+            
+            <label for="address"><b>Address : </b></label>
+            <input type="address" class="input-field" id="psd" name="address" required><br><br>
+
+            <label for="city"><b>City : </b></label>
+            <input type="text" class="input-field" id="psd" name="city" required><br><br>
+
+            <label for="state"><b>State : </b></label>
+            <input type="text" class="input-field" id="psd" name="state" require><br><br>
+
+            <label for="zip"><b>Zip : </b></label>
+            <input type="zip" class="input-field" id="psd" name="zip" required><br><br>
+            
+            <label for="contactnumber"><b>Contact Number : </b></label>
+            <input type="contactnumber" class="input-field" id="psd" name="contactnumber" required><br><br>
+            
+            <label for="email"><b>Email ID : </b></label>
+            <input type="email" class="input-field" id="psd" name="email" required><br><br>
+            
+            <label for="fromdate"><b>From Date : </b></label>
+            <input type="date" class="input-field" id="psd" name="fromdate" required><br><br>
+             
+            <label for="todate"><b>To Date : </b></label>
+            <input type="date"class="input-field" id="psd" name="todate" required><br><br>
+             
+            <label for="fixedincome"><b>Fixed Income : </b></label>
+            <input type="fixedincome" class="input-field" id="psd" name="fixedincome" required><br><br>
+            
+            <label for="otherincome"><b>Other Income : </b></label>
+            <input type="otherincome" class="input-field" id="psd" name="otherincome" required><br><br>
+            
+            <label for="noofresidents"><b>Number of residents : </b></label>
+            <input type="noofresidents" class="input-field" id="psd" name="noofresidents" required><br><br>
+            
+            <label for="residentname"><b>Resident 1 Name : </b></label>
+            <input type="residentname" class="input-field" id="psd" name="residentname" required><br><br>
+            
+            <label for="residentage"><b>Resident 1 Age : </b></label>
+            <input type="residentage" class="input-field" id="psd" name="residentage" required><br><br>
+
+            <label for="residentname"><b>Resident 2 Name : </b></label>
+            <input type="residentname" class="input-field" id="psd" name="residentname" required><br><br>
+             
+            <label for="residentage"><b>Resident 2 Age : </b></label>
+            <input type="residentage" class="input-field" id="psd" name="residentage" required><br><br>
+            
+            <label for="residentname"><b>Resident 3 Name : </b></label>
+            <input type="residentname" class="input-field" id="psd" name="residentname" required><br><br>
+            
+            <label for="residentage"><b>Resident 3 Age : </b></label>
+            <input type="residentage" class="input-field" id="psd" name="residentage" required><br><br>
+            
+            <hr>
+            <script>
+             function disableSubmit() {
+              document.getElementById("submit").disabled = true;
+             }
+
+              function activateButton(element) {
+
+                  if(element.checked) {
+                    document.getElementById("submit").disabled = false;
+                   }
+                   else  {
+                    document.getElementById("submit").disabled = true;
+                  }
+
+              }
+            </script>
+            </head>
+
+            <body onload="disableSubmit()">
+             <input type="checkbox" class="check-box" name="terms" id="terms" onchange="activateButton(this)">  I Agree to the Terms & Conditions
+            <br><br>
+            <label for="name"><b>Name : </b></label>
+            <input type="text" class="input-field" id="psd" name="name" required>
+            
+            <label for="place"><b>Place : </b></label>
+            <input type="place" class="input-field" id="psd" name="place" required>
+            
+            <label for="date"><b>Date : </b></label>
+            <input type="date" class="input-field" id="psd" name="date" required>
+             
+            <form action="/action_page.php">
+                 <!-- <input type="submit" value="Send to Accountant"> -->
+                 <button type="submit" class="submit-btn">Send to Accountant</button>
+        </form>
+    </div>
+
+</body>
+</html>
