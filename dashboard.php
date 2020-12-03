@@ -12,7 +12,6 @@ include("auth_session.php");
 <body>
 	<div class="nav">
         <nav>
-        <img class="logo-img" src="./Logo1.svg" width="200" height="150">
             <ul>
             	<li><a href="logout.php">Log-out</a></li>
                 <li><a href="#">Help</a></li>

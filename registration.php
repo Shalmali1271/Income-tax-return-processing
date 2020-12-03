@@ -32,7 +32,7 @@
         $mobileno    = mysqli_real_escape_string($con, $mobileno);
         $logintype    = stripslashes($_REQUEST['logintype']);
         $logintype    = mysqli_real_escape_string($con, $logintype);
-        $query    = "INSERT into `signup_page`(fname,lname,gender,email,password,dob,peradd,comadd,mobileno,logintype) VALUES ('$fname','$lname','$gender', '$email' ,'$password','$dob','$peradd','$comadd','$mobileno','$logintype')";
+        $query    = "INSERT into `signup_page`(fname,lname,gender,email,password,dob,peradd,comadd,mobileno,logintype) VALUES ('$fname','$lname','$gender', '$email' ,'". md5($password)."','$dob','$peradd','$comadd','$mobileno','$logintype')";
         $result   = mysqli_query($con, $query);
         $subject = "Validation of Email-Id";
         $from = "regulusblack1200@gamil.com";
@@ -40,7 +40,8 @@
         if($result = mysqli_query($con, $sql)){
             if(mysqli_num_rows($result) > 0){
                 while($row = mysqli_fetch_array($result)){
-                    $row['verified'] = 1;
+                    $query1= "Update `signup_page` SET `verified` = '1' WHERE `fname` = '$fname';"; 
+                    $query1_run =  mysqli_query($con , $query1)  or die(mysqli_error($con));
                     $msg= "Dear {$row['fname']} {$row['lname']} , {$row['userid']} is Your UserId. You can paste this on login page.\n Your verification is completed .";
                 }
             }
@@ -48,24 +49,22 @@
         mail($email, $subject, $msg, 'From:' . $from);
         echo 'Email sent to: ' .$email. '<br>';
         if ($result) {
-            echo "<div class='form'>
-                  <h3>You are registered successfully.</h3><br/>
-                  <p class='link'>Click here to <a href='login.php'>Login</a></p>
-                  </div>";
+            echo '<script type = "text/javascript"> 
+                    alert("Your registrationis successful.") 
+                    window.location.replace("login.php");
+                  </script>';
         } else {
-            echo "<div class='form'>
-                  <h3>Required fields are missing.</h3><br/>
-                  <p class='link'>Click here to <a href='registration.php'>registration</a> again.</p>
-                  </div>";
+            echo '<script type = "text/javascript"> 
+                    alert("Some required fields are missing!") 
+                    window.location.replace("registration.php");
+                  </script>';
         }
     } else {
     ?>
     <div class="nav">
         <nav>
-        <img class="logo-img" src="./Logo1.svg" width="200" height="150">
             <ul>
-                <li><a href="#">Help</a></li>
-                <li><a href="#">Feedback</a></li>
+                <li><a href="help.html">Help</a></li>
                 <li><a href="#">Contact us</a></li>
             </ul>
         </nav>  
@@ -92,10 +91,15 @@
                 <option value="Accountant"></option>
                 <option value="Admin"></option>
                 </datalist>
-        <input type="checkbox" class="check-box"><span class="check-box" required> I agree to the terms and conditions.</span><br><br>
+        <input type="checkbox" class="check-box"><span class="check-box" required> <a href="terms.html">I agree to the terms and conditions.</a></span><br><br>
         <input type="submit" name="submit" value="Register" class="login-button">
         <p class="link">Already have an account? <a href="login.php">Login here</a></p>
     </form>
+    <footer>
+        <p class="link">Contact us on Email : regulusblack1200@gmail.com</p>
+        <br>
+        <p class="link"><a href="#">For any help click here</a></p>
+    </footer>
 <?php
     }
 ?>

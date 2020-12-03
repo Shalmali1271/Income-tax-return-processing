@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <link rel="stylesheet" href="stylesheet.css"/>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
     <div class="nav">
 		<nav>
-		<img class="logo-img" src="homepage_images/Logo1.svg" width="200" height="150">
 			<ul>
 				<li><a href="#">Help</a></li>
 				<li><a href="#">Feedback</a></li>
@@ -18,89 +17,85 @@
     <h1>Welcome to Income Tax Return Processing</h1>
     <h2>Fill Form 16(A)</h2>
     <div class="form-box">
-        <form action="" id="taxpayerstatus" method="post" class="login" onsubmit="try {return window.confirm(&quot;This form may not function properly due to certain security constraints.\nContinue?&quot;);} catch (e) {return false;}">
+        <form action="" id="taxpayerstatus" method="post" class="form" onsubmit="">
           
           <label><b>User ID : </b></label>
-            <input type="text" name="userid" class="input-field" autocomplete="off" required><br><br>
+            <input type="text" name="userid" class="login-input" autocomplete="off" required><br><br>
 
             <label><b>Name : </b></label>
-            <input type="text" name="name" class="input-field" autocomplete="off" required><br><br>
+            <input type="text" name="name" class="login-input" autocomplete="off" required><br><br>
 
             <label><b>PAN Number : </b></label>
-            <input type="pannumber" name="pannumber" class="input-field" autocomplete="off" required><br><br>
+            <input type="pannumber" name="pannumber" class="login-input" autocomplete="off" required><br><br>
             
             <label><b>Address : </b></label>
-            <input type="address" name="address" class="input-field" autocomplete="off" required><br><br>
+            <input type="address" name="address" class="login-input" autocomplete="off" required><br><br>
 
             <label><b>City : </b></label>
-            <input type="text" name="city" class="input-field" autocomplete="off" required><br><br>
+            <input type="text" name="city" class="login-input" autocomplete="off" required><br><br>
 
             <label><b>State : </b></label>
-            <input type="text" name="state" class="input-field" autocomplete="off" required><br><br>
+            <input type="text" name="state" class="login-input" autocomplete="off" required><br><br>
 
             <label><b>Zip : </b></label>
-            <input type="zip" name="zip" class="input-field" autocomplete="off" required><br><br>
+            <input type="zip" name="zip" class="login-input" autocomplete="off" required><br><br>
             
             <label><b>Contact Number : </b></label>
-            <input type="contactnumber" name="contactnumber" class="input-field" autocomplete="off" required><br><br>
+            <input type="contactnumber" name="contactnumber" class="login-input" autocomplete="off" required><br><br>
             
             <label><b>Email ID : </b></label>
-            <input type="email" name="email" class="input-field" autocomplete="off" required><br><br>
+            <input type="email" name="email" class="login-input" autocomplete="off" required><br><br>
             
             <label><b>From Date : </b></label>
-            <input type="date" name="fromdate" class="input-field"><br><br>
+            <input type="date" name="fromdate" class="login-input"><br><br>
              
             <label><b>To Date : </b></label>
-            <input type="date" name="todate" class="input-field"><br><br>
+            <input type="date" name="todate" class="login-input"><br><br>
              
             <label><b>Fixed Income : </b></label>
-            <input type="fixedincome" name="fixedincome" class="input-field"><br><br>
+            <input type="fixedincome" name="fixedincome" class="login-input"><br><br>
             
             <label><b>Other Income : </b></label>
-            <input type="otherincome" name="otherincome" class="input-field"><br><br>
+            <input type="otherincome" name="otherincome" class="login-input"><br><br>
             
             <label><b>Number of residents : </b></label>
-            <input type="noofresidents" name="noofresidents" class="input-field"><br><br>
+            <input type="noofresidents" name="noofresidents" class="login-input"><br><br>
             
             <label><b>Resident 1 Name : </b></label>
-            <input type="residentname" name="residentname" class="input-field"><br><br>
+            <input type="residentname" name="residentname" class="login-input"><br><br>
             
             <label><b>Resident 1 Age : </b></label>
-            <input type="residentage" name="residentage" class="input-field"><br><br>
+            <input type="residentage" name="residentage" class="login-input"><br><br>
 
             <label><b>Resident 2 Name : </b></label>
-            <input type="residentname" name="residentname" class="input-field"><br><br>
+            <input type="residentname" name="residentname" class="login-input"><br><br>
              
             <label><b>Resident 2 Age : </b></label>
-            <input type="residentage" name="residentage" class="input-field"><br><br>
+            <input type="residentage" name="residentage" class="login-input"><br><br>
             
             <label><b>Resident 3 Name : </b></label>
-            <input type="residentname" name="residentname" class="input-field"><br><br>
+            <input type="residentname" name="residentname" class="login-input"><br><br>
             
             <label><b>Resident 3 Age : </b></label>
-            <input type="residentage" name="residentage" class="input-field"><br><br>
+            <input type="residentage" name="residentage" class="login-input"><br><br>
             
             <hr>
             
             <div>
             <label><b>Name : </b></label>
-            <input type="text" name="name" class="input-field">
+            <input type="text" name="name" class="login-input">
             
             <label><b>Place : </b></label>
-            <input type="place" name="place" class="input-field">
+            <input type="place" name="place" class="login-input">
             
             <label><b>Date : </b></label>
-            <input type="date" name="date" class="input-field">
+            <input type="date" name="date" class="login-input">
 
             <label><b>Status : </b></label>
-            <input type="status" name="status" class="input-field"> 
-            <button type="submit" class="submit-btn" id="submit-btn">Submit</button>
+            <input type="status" name="status" class="login-input"> 
+            <input  type="submit" class="login-button" id="submit-btn" value="Submit">
             </form>    
             <br>
-            <form action="" target="_blank" onsubmit="try {return window.confirm(&quot;This form may not function properly due to certain security constraints.\nContinue?&quot;);} catch (e) {return false;}">
-                 
-                 
-        </form>
     </div>
 
 </form></div>
