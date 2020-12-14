@@ -7,13 +7,13 @@
 </head>
 <body>
     <div class="nav">
-        <h2 class="heading">Reset Password</h2>
         <nav>
             <ul>
                 <li><a href="help.html">Help</a></li>
                 <li><a href="#">Contact us</a></li>
             </ul>
         </nav>  
+        <h2 class="heading">Reset Password</h2>
     </div>
     <?php
         require('db.php');

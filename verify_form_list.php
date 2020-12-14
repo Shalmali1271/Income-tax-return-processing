@@ -27,11 +27,15 @@ include("auth_session.php");
         $sql = "SELECT userid, name, keyw , verification FROM tax_form";
         $result = mysqli_query($con,$sql);
         if (mysqli_num_rows($result)>0) {
-            echo "<div class='form'><table><tr><th>UserID</th><th>Name</th><th>key</th></tr>";
+            echo "<div class='form'><table id='customers'><tr><th>UserID</th><th>Name</th><th>Form</th></tr>";
             // output data of each row
             while($row = mysqli_fetch_assoc($result)) {
                 if ($row["verification"] == 0) {
-                    echo "<tr><td>" . $row["userid"]. "</td><td>" . $row["name"]. "</td><td><a class= 'btn-link' href='http://localhost/IP%20mini%20project/verify_form.php? key= ".$row['keyw']."'>" . $row["keyw"]. "</a></td></tr>";
+                    echo "<tr>
+                            <td>" . $row["userid"]. "</td>
+                            <td>" . $row["name"]. "</td>
+                            <td><a class= 'btn-link' href='http://localhost/IP%20mini%20project/verify_form.php? key= ".$row['keyw']."'><button type='button' class='btn1'>Check</button></a></td>
+                          </tr>";
                 }
             }
             echo "</table></div>";

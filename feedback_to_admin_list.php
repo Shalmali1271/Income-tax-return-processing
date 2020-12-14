@@ -27,10 +27,13 @@ include("auth_session.php");
         $sql = "SELECT * FROM feedback";
         $result = mysqli_query($con,$sql);
         if (mysqli_num_rows($result)>0) {
-            echo "<div class='form'><table><tr><th>Name</th><th>subject</th></tr>";
+            echo "<div class ='form'><table id='customers'><tr><th>Name Of the Taxpayer</th><th>Subject of the feedback</th></tr>";
             // output data of each row
             while($row = mysqli_fetch_assoc($result)) {
-                echo "<tr><td>" . $row["name"]. "</td><td><a class= 'btn-link' href='http://localhost/IP%20mini%20project/feedback_from_taxpayer.php? key= ".$row['keyy']."'>" . $row["subject"]. "</a></td></tr>";
+                echo "<tr>
+                        <td>" . $row["name"]. "</td>
+                        <td><a class= 'btn-link' href='http://localhost/IP%20mini%20project/feedback_from_taxpayer.php? key= ".$row['keyy']."'>" . $row["subject"]. "</a></td>
+                      </tr>";
             }
             echo "</table></div>";
         } else {

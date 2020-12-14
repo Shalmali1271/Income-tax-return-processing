@@ -50,7 +50,7 @@
         echo 'Email sent to: ' .$email. '<br>';
         if ($result) {
             echo '<script type = "text/javascript"> 
-                    alert("Your registrationis successful.") 
+                    alert("Your registration is successful.") 
                     window.location.replace("login.php");
                   </script>';
         } else {
@@ -98,7 +98,7 @@
     <footer>
         <p class="link">Contact us on Email : regulusblack1200@gmail.com</p>
         <br>
-        <p class="link"><a href="#">For any help click here</a></p>
+        <p class="link"><a href="help.html">For any help click here</a></p>
     </footer>
 <?php
     }

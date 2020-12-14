@@ -21,9 +21,28 @@ include("auth_session.php");
         </nav>  
     </div>
     <h2 class="heading">Accountant Dashboard</h2>
-    <div class="form">
-        <a href="verify_form_list.php"><input type="submit" value="Verify Form (16)" name="verify" class="menu-button"></a>
-    </div>
+    <?php 
+        require('db.php');
+        if (!isset($_GET['userid'])) {    
+            $userid = $_SESSION['userid'];    // removes backslashes
+            $sql = "SELECT `request` FROM `signup_page` where `userid`='$userid'";
+            $result = mysqli_query($con,$sql);
+            if (mysqli_num_rows($result)>0) { 
+                while($row = mysqli_fetch_assoc($result)) {
+                    if ($row["request"] == '1'){
+                        echo"
+                        <div class='form'>
+                            <a href='verify_form_list.php'><input type='submit' value='Verify Form (16)' name='verify' class='menu-button'></a>
+                        </div>";
+                    }else{
+                        echo "You are not verified by the admin yet";
+                    }
+                }
+            }else{
+                echo 0;
+            }
+        }
+    ?>
     <footer>
         <p class="link">Contact us on Email : regulusblack1200@gmail.com</p>
         <br>
